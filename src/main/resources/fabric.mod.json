@@ -1,12 +1,14 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "anode",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Anode",
+  "description": "Guild statistics for Wynncraft",
   "authors": [
-    "Me!"
+    "Andrew",
+    "ChristmasBear",
+    "RawGamingYT"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -19,11 +21,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "xyz.andw.anode.Anode"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "anode.mixins.json"
   ],
 
   "depends": {

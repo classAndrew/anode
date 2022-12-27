@@ -1,16 +1,17 @@
-package net.fabricmc.example.mixin;
+package xyz.andw.anode.mixin;
 
-import net.fabricmc.example.ExampleMod;
 import net.minecraft.client.gui.screen.TitleScreen;
+import xyz.andw.anode.Anode;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(TitleScreen.class)
-public class ExampleMixin {
+public class AnodeMixin {
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
-		ExampleMod.LOGGER.info("This line is printed by an example mod mixin!");
+		Anode.LOGGER.info("(Title screen Mixin Check)");
 	}
 }
