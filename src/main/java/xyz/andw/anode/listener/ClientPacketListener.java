@@ -39,12 +39,12 @@ public class ClientPacketListener {
 
 		PlayerListS2CCallback.EVENT.register((packet) -> {
 			List<Entry> entries = packet.getEntries();
-			if (packet.getAction() == Action.UPDATE_DISPLAY_NAME) {
+			if (packet.getActions().contains(Action.UPDATE_DISPLAY_NAME)) {
 				for (Entry e : entries) {
-					GameProfile prof = e.getProfile();
+					GameProfile prof = e.profile();
 					if (!prof.getId().equals(WORLD_NAME_UUID)) continue;
 
-					String worldDisplayName = e.getDisplayName().getString();
+					String worldDisplayName = e.displayName().getString();
 					Matcher matcher = WORLD_NAME.matcher(worldDisplayName);
 					if (matcher.find()) {
 						String worldName = matcher.group(1);

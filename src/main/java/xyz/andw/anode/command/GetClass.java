@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 
-import net.fabricmc.fabric.api.client.command.v1.FabricClientCommandSource;
+import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.minecraft.item.CompassItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtList;
@@ -36,7 +36,7 @@ public class GetClass extends LiteralArgumentBuilder<FabricClientCommandSource> 
 
         Anode.scheduler.addJob(() -> { 
             Anode.mc.player.getInventory().selectedSlot = 6;
-            Anode.mc.interactionManager.interactItem(Anode.mc.player, Anode.mc.world, Hand.MAIN_HAND);
+            Anode.mc.interactionManager.interactItem(Anode.mc.player, Hand.MAIN_HAND);
             if (!(Anode.mc.player.getInventory().getMainHandStack().getItem() instanceof CompassItem)) {
                 Anode.mc.player.getInventory().selectedSlot = preClassCheckSlot;
                 Anode.mc.player.sendMessage(Text.of("[Anode] Cannot set class (in lobby?)"), false);
