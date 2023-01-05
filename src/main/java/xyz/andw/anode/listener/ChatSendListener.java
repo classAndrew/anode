@@ -9,7 +9,7 @@ public class ChatSendListener {
 
     public static void init() {
         ChatSendCallback.EVENT.register((msg) -> {
-			if (msg.withoutStyle().stream().map(String::valueOf).collect(Collectors.joining()).equals("/class")) {
+			if (msg.getString().strip().equals("/class")) {
                 Anode.state.inClassScreen = true;
             }
 		});
