@@ -2,6 +2,7 @@ package xyz.andw.anode.event;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
+import net.minecraft.text.Text;
 
 public interface ChatSendCallback {
     
@@ -12,5 +13,5 @@ public interface ChatSendCallback {
             }
     });
 
-    void trigger(String message);
+    void trigger(Text message);
 }

@@ -1,4 +1,5 @@
 package xyz.andw.anode.mixin;
+import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -22,8 +23,8 @@ public class ClientPlayerMixin {
         }
 	}
 
-    @Inject(at = @At("HEAD"), method = "sendChatMessage(Ljava/lang/String;)V")
-    public void onSendChatMessage(String msg, CallbackInfo info) {
+    @Inject(at = @At("HEAD"), method = "sendMessage(Lnet/minecraft/text/Text;)V")
+    public void onSendChatMessage(Text msg, CallbackInfo info) {
         ChatSendCallback.EVENT.invoker().trigger(msg);
     }
 }

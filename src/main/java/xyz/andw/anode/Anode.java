@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.minecraft.client.MinecraftClient;
 import xyz.andw.anode.command.GetClass;
 import xyz.andw.anode.listener.ChatSendListener;
@@ -42,6 +42,6 @@ public class Anode implements ModInitializer {
 		SlotClickListener.init();
 		LOGGER.info("Initialized SlotClickListener");
 
-		ClientCommandManager.DISPATCHER.register(new GetClass("getclass"));
+		ClientCommandManager.getActiveDispatcher().register(new GetClass("getclass"));
 	}
 }
