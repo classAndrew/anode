@@ -1,3 +1,8 @@
+Anode 1.19.3
+
+# This was originally cloned from the Fabric Example Mod
+------------------------------------
+
 # Fabric Example Mod
 
 ## Setup
