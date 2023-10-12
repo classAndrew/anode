@@ -12,6 +12,7 @@
     "ClientPlayerMixin",
     "MinecraftClientMixin",
     "ClientPlayNetworkHandlerMixin",
+    "ClientCommonNetworkHandlerMixin",
     "ScreenHandlerMixin"
   ],
   "injectors": {

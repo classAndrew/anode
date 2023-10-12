@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.client.network.ClientPlayNetworkHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.GameJoinS2CPacket;
 import net.minecraft.network.packet.s2c.play.InventoryS2CPacket;
 import net.minecraft.network.packet.s2c.play.PlayerListS2CPacket;
@@ -30,10 +30,5 @@ public class ClientPlayNetworkHandlerMixin {
     @Inject(at = @At("TAIL"), method = "onPlayerList(Lnet/minecraft/network/packet/s2c/play/PlayerListS2CPacket;)V")
     public void onPlayerList(PlayerListS2CPacket packet, CallbackInfo info) {
         PlayerListS2CCallback.EVENT.invoker().trigger(packet);   
-	}
-
-    @Inject(at = @At("TAIL"), method = "sendPacket(Lnet/minecraft/network/Packet;)V")
-    public void onPacketSend(Packet packet, CallbackInfo info) {
-        PacketSendCallback.EVENT.invoker().trigger(packet);   
 	}
 }

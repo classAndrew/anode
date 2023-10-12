@@ -2,7 +2,8 @@ package xyz.andw.anode.event;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
-import net.minecraft.network.Packet;
+import net.minecraft.network.packet.Packet;
+
 
 public interface PacketSendCallback {
     

@@ -12,6 +12,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class AnodeMixin {
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
-		Anode.LOGGER.info("(Title screen Mixin Check)");
+		// Anode.LOGGER.info("Grabbing Regex Pattern for ");
 	}
 }
